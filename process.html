@@ -1,168 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Process — Sovereign Forge</title>
-<link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process — Sovereign Forge</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
-<nav>
-  <a href="index.html" class="logo">SOVEREIGN <span>FORGE</span></a>
-  <ul class="nav-links">
-    <li><a href="about.html">About</a></li>
-    <li><a href="process.html" class="active">Process</a></li>
-    <li><a href="platform.html">Platform</a></li>
-    <li><a href="use-cases.html">Use Cases</a></li>
-    <li><a href="engagement.html">Engagement</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+    <nav>
+        <a href="index.html" class="logo">SOVEREIGN <span>FORGE</span></a>
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="process.html" class="active">Process</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="use-cases.html">Use Cases</a></li>
+            <li><a href="engagement.html">Engagement</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-<div class="page-header">
-  <div class="section-tag">// The Sovereign Forge Process</div>
-  <h1>Four phases. <strong>Full automation.</strong><br>Human validation at every gate.</h1>
-  <p class="page-subtitle">From binary to containerized microservice — a systematic pipeline that compresses months of manual reverse engineering into weeks.</p>
-</div>
+    <div class="page-header">
+        <div class="section-tag">// The Sovereign Forge Process</div>
+        <h1>Four phases. <strong>Full automation.</strong><br>Human validation at every gate.</h1>
+        <p class="page-subtitle">From binary to containerized microservice — a systematic pipeline that compresses
+            months of manual reverse engineering into weeks.</p>
+    </div>
 
-<!-- Phase 1: Discovery -->
-<section class="bg-navy">
-  <div class="section-tag">// Phase 01</div>
-  <h2 class="section-title"><strong>Discovery</strong></h2>
-  <div class="content-two-col">
-    <div class="content-text">
-      <p>The Discovery phase tears apart legacy application packages to build a machine-readable system manifest. Every installer format, every binary, every database schema, every network call — captured, catalogued, and documented automatically.</p>
-      <p>The output is a comprehensive technical blueprint of what the application actually does at the system level, independent of any documentation that may or may not exist.</p>
-    </div>
-    <div>
-      <ul class="detail-list">
-        <li><span class="marker">→</span><strong>Installer Extraction</strong> — Automated unpacking of MSI, NSIS, Inno Setup, and InstallShield packages. Every file, registry key, and service definition extracted.</li>
-        <li><span class="marker">→</span><strong>Binary Analysis</strong> — Ghidra headless mode performs function-level decompilation. Call graphs, string references, import tables, and API usage patterns identified.</li>
-        <li><span class="marker">→</span><strong>Database Schema Recovery</strong> — SQL Server, Access, and FoxPro databases reverse-engineered. Table relationships, stored procedures, triggers, and data types mapped.</li>
-        <li><span class="marker">→</span><strong>Registry &amp; Filesystem Diff</strong> — Before/after snapshots capture every system modification the application makes during installation and runtime.</li>
-        <li><span class="marker">→</span><strong>Network Protocol Capture</strong> — All external communications recorded. HTTP/HTTPS endpoints, database connections, SMTP, and custom protocols identified.</li>
-        <li><span class="marker">→</span><strong>Deployment Documentation</strong> — Auto-generated installation guide based on observed behavior, not vendor claims.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="card-grid card-grid-4" style="margin-top: 3rem;">
-    <div class="card" style="text-align: center;"><div class="card-icon">📦</div><h3>Installers Extracted</h3><p>MSI, NSIS, Inno Setup, InstallShield</p></div>
-    <div class="card" style="text-align: center;"><div class="card-icon">🔬</div><h3>Binaries Analyzed</h3><p>Ghidra headless decompilation</p></div>
-    <div class="card" style="text-align: center;"><div class="card-icon">🗄️</div><h3>Schemas Recovered</h3><p>SQL Server, Access, FoxPro</p></div>
-    <div class="card" style="text-align: center;"><div class="card-icon">🌐</div><h3>Protocols Captured</h3><p>HTTP, SQL, SMTP, custom</p></div>
-  </div>
-  <p style="margin-top: 3rem; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ms-green);">Output → Machine-readable system manifest</p>
-</section>
+    <!-- Phase 1: Discovery -->
+    <section class="bg-navy">
+        <div class="section-tag">// Phase 01</div>
+        <h2 class="section-title"><strong>Discovery</strong></h2>
+        <div class="content-two-col">
+            <div class="content-text">
+                <p>The Discovery phase tears apart legacy application packages to build a machine-readable system
+                    manifest. Every installer format, every binary, every database schema, every network call —
+                    captured, catalogued, and documented automatically.</p>
+                <p>The output is a comprehensive technical blueprint of what the application actually does at the system
+                    level, independent of any documentation that may or may not exist.</p>
+            </div>
+            <div>
+                <ul class="detail-list">
+                    <li><span class="marker">→</span><strong>Installer Extraction</strong> — Automated unpacking of MSI,
+                        NSIS, Inno Setup, and InstallShield packages. Every file, registry key, and service definition
+                        extracted.</li>
+                    <li><span class="marker">→</span><strong>Binary Analysis</strong> — Ghidra headless mode performs
+                        function-level decompilation. Call graphs, string references, import tables, and API usage
+                        patterns identified.</li>
+                    <li><span class="marker">→</span><strong>Database Schema Recovery</strong> — SQL Server, Access, and
+                        FoxPro databases reverse-engineered. Table relationships, stored procedures, triggers, and data
+                        types mapped.</li>
+                    <li><span class="marker">→</span><strong>Registry &amp; Filesystem Diff</strong> — Before/after
+                        snapshots capture every system modification the application makes during installation and
+                        runtime.</li>
+                    <li><span class="marker">→</span><strong>Network Protocol Capture</strong> — All external
+                        communications recorded. HTTP/HTTPS endpoints, database connections, SMTP, and custom protocols
+                        identified.</li>
+                    <li><span class="marker">→</span><strong>Deployment Documentation</strong> — Auto-generated
+                        installation guide based on observed behavior, not vendor claims.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-grid card-grid-4" style="margin-top: 3rem;">
+            <div class="card" style="text-align: center;">
+                <div class="card-icon">📦</div>
+                <h3>Installers Extracted</h3>
+                <p>MSI, NSIS, Inno Setup, InstallShield</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div class="card-icon">🔬</div>
+                <h3>Binaries Analyzed</h3>
+                <p>Ghidra headless decompilation</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div class="card-icon">🗄️</div>
+                <h3>Schemas Recovered</h3>
+                <p>SQL Server, Access, FoxPro</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div class="card-icon">🌐</div>
+                <h3>Protocols Captured</h3>
+                <p>HTTP, SQL, SMTP, custom</p>
+            </div>
+        </div>
+        <p
+            style="margin-top: 3rem; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ms-green);">
+            Output → Machine-readable system manifest</p>
+    </section>
 
-<!-- Phase 2: Knowledge Capture -->
-<section class="bg-deep">
-  <div class="section-tag">// Phase 02</div>
-  <h2 class="section-title"><strong>Knowledge Capture</strong></h2>
-  <div class="content-two-col">
-    <div class="content-text">
-      <p>The most critical business logic often lives in people's heads, not in code. The Knowledge Capture phase extracts institutional knowledge through structured interviews, screen recordings, and AI-assisted workflow analysis.</p>
-      <p>This is where the 30-40% that can't be automated gets addressed — the domain semantics, the "we always do it this way" workflows, and the undocumented business rules that no decompiler will ever find.</p>
-    </div>
-    <div>
-      <ul class="detail-list">
-        <li><span class="marker">→</span><strong>Guided Interviews</strong> — Structured questionnaires for administrators and end users, recorded and transcribed via Whisper. Role-specific question trees adapt based on responses.</li>
-        <li><span class="marker">→</span><strong>Screen Recording</strong> — User sessions captured with AI annotation via Azure AI Vision. Every click, every navigation path, every data entry pattern documented.</li>
-        <li><span class="marker">→</span><strong>Workflow Mapping</strong> — Role-based process flows derived from observed behavior. End-to-end business processes mapped from initiation to completion.</li>
-        <li><span class="marker">→</span><strong>Business Rule Extraction</strong> — The logic that lives in people's heads: exception handling, edge cases, seasonal variations, approval chains, and informal procedures.</li>
-      </ul>
-    </div>
-  </div>
-  <p style="margin-top: 3rem; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ms-green);">Output → Functional specification + process maps</p>
-</section>
+    <!-- Phase 2: Knowledge Capture -->
+    <section class="bg-deep">
+        <div class="section-tag">// Phase 02</div>
+        <h2 class="section-title"><strong>Knowledge Capture</strong></h2>
+        <div class="content-two-col">
+            <div class="content-text">
+                <p>The most critical business logic often lives in people's heads, not in code. The Knowledge Capture
+                    phase extracts institutional knowledge through structured interviews, screen recordings, and
+                    AI-assisted workflow analysis.</p>
+                <p>This is where the 30-40% that can't be automated gets addressed — the domain semantics, the "we
+                    always do it this way" workflows, and the undocumented business rules that no decompiler will ever
+                    find.</p>
+            </div>
+            <div>
+                <ul class="detail-list">
+                    <li><span class="marker">→</span><strong>Guided Interviews</strong> — Structured questionnaires for
+                        administrators and end users, recorded and transcribed via Whisper. Role-specific question trees
+                        adapt based on responses.</li>
+                    <li><span class="marker">→</span><strong>Screen Recording</strong> — User sessions captured with AI
+                        annotation via Azure AI Vision. Every click, every navigation path, every data entry pattern
+                        documented.</li>
+                    <li><span class="marker">→</span><strong>Workflow Mapping</strong> — Role-based process flows
+                        derived from observed behavior. End-to-end business processes mapped from initiation to
+                        completion.</li>
+                    <li><span class="marker">→</span><strong>Business Rule Extraction</strong> — The logic that lives in
+                        people's heads: exception handling, edge cases, seasonal variations, approval chains, and
+                        informal procedures.</li>
+                </ul>
+            </div>
+        </div>
+        <p
+            style="margin-top: 3rem; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ms-green);">
+            Output → Functional specification + process maps</p>
+    </section>
 
-<!-- Phase 3: Analysis & Decision -->
-<section class="bg-navy">
-  <div class="section-tag">// Phase 03</div>
-  <h2 class="section-title"><strong>Analysis &amp; Decision</strong></h2>
-  <div class="content-two-col">
-    <div class="content-text">
-      <p>Phase 3 correlates everything discovered in Phases 1 and 2 into an actionable BI dashboard. Complexity scoring, risk heat maps, workflow coverage analysis, and integration surface area — all visualized for decision-makers.</p>
-      <p>The platform recommends a modernization target but the human makes the call. Every recommendation comes with cost, effort, and risk modeling.</p>
-    </div>
-    <div>
-      <ul class="detail-list">
-        <li><span class="marker">→</span><strong>Complexity Scoring</strong> — Weighted analysis of code complexity, integration density, data sensitivity, and user workflow coverage.</li>
-        <li><span class="marker">→</span><strong>Risk Heat Maps</strong> — Visual identification of high-risk components: undocumented integrations, complex business logic, compliance-sensitive data flows.</li>
-        <li><span class="marker">→</span><strong>Compliance Mapping</strong> — Gap analysis against CMMC, HIPAA, PCI-DSS, and NIST 800-171. Requirements mapped to specific application components.</li>
-        <li><span class="marker">→</span><strong>Target Recommendation</strong> — Cost/effort/risk model for each modernization path: SaaS replacement, internal web app, fat client 1:1, or hybrid.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="card-grid card-grid-4" style="margin-top: 3rem;">
-    <div class="card" style="text-align: center;"><div class="card-icon">☁️</div><h3>SaaS Replacement</h3><p>Commodity functionality, low customization</p></div>
-    <div class="card" style="text-align: center;"><div class="card-icon">🌐</div><h3>Internal Web App</h3><p>Org-specific logic, stays on-prem</p></div>
-    <div class="card" style="text-align: center;"><div class="card-icon">🖥️</div><h3>Fat Client 1:1</h3><p>Preserve user workflows exactly</p></div>
-    <div class="card" style="text-align: center;"><div class="card-icon">⚡</div><h3>Hybrid</h3><p>Web + containers + preserved components</p></div>
-  </div>
-  <p style="margin-top: 3rem; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ms-green);">Output → Target recommendation with gap report</p>
-</section>
+    <!-- Phase 3: Analysis & Decision -->
+    <section class="bg-navy">
+        <div class="section-tag">// Phase 03</div>
+        <h2 class="section-title"><strong>Analysis &amp; Decision</strong></h2>
+        <div class="content-two-col">
+            <div class="content-text">
+                <p>Phase 3 correlates everything discovered in Phases 1 and 2 into an actionable BI dashboard.
+                    Complexity scoring, risk heat maps, workflow coverage analysis, and integration surface area — all
+                    visualized for decision-makers.</p>
+                <p>The platform recommends a modernization target but the human makes the call. Every recommendation
+                    comes with cost, effort, and risk modeling.</p>
+            </div>
+            <div>
+                <ul class="detail-list">
+                    <li><span class="marker">→</span><strong>Complexity Scoring</strong> — Weighted analysis of code
+                        complexity, integration density, data sensitivity, and user workflow coverage.</li>
+                    <li><span class="marker">→</span><strong>Risk Heat Maps</strong> — Visual identification of
+                        high-risk components: undocumented integrations, complex business logic, compliance-sensitive
+                        data flows.</li>
+                    <li><span class="marker">→</span><strong>Compliance Mapping</strong> — Gap analysis against CMMC,
+                        HIPAA, PCI-DSS, and NIST 800-171. Requirements mapped to specific application components.</li>
+                    <li><span class="marker">→</span><strong>Target Recommendation</strong> — Cost/effort/risk model for
+                        each modernization path: SaaS replacement, internal web app, fat client 1:1, or hybrid.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-grid card-grid-4" style="margin-top: 3rem;">
+            <div class="card" style="text-align: center;">
+                <div class="card-icon">☁️</div>
+                <h3>SaaS Replacement</h3>
+                <p>Commodity functionality, low customization</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div class="card-icon">🌐</div>
+                <h3>Internal Web App</h3>
+                <p>Org-specific logic, stays on-prem</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div class="card-icon">🖥️</div>
+                <h3>Fat Client 1:1</h3>
+                <p>Preserve user workflows exactly</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div class="card-icon">⚡</div>
+                <h3>Hybrid</h3>
+                <p>Web + containers + preserved components</p>
+            </div>
+        </div>
+        <p
+            style="margin-top: 3rem; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ms-green);">
+            Output → Target recommendation with gap report</p>
+    </section>
 
-<!-- Phase 4: Generation & Validation -->
-<section class="bg-deep">
-  <div class="section-tag">// Phase 04</div>
-  <h2 class="section-title"><strong>Generation &amp; Validation</strong></h2>
-  <div class="content-two-col">
-    <div class="content-text">
-      <p>The final phase produces deployable artifacts. AI agents generate microservice scaffolding based on the discovered specifications. Test suites are derived from captured workflows. Everything is validated against the original application running in a sandboxed environment.</p>
-      <p>The output is not a black box — it's source code, container images, API specifications, and test suites that the organization owns and can maintain.</p>
-    </div>
-    <div>
-      <ul class="detail-list">
-        <li><span class="marker">→</span><strong>Code Scaffolding</strong> — Semantic Kernel and AutoGen agents generate microservice code from discovered specifications and captured business rules.</li>
-        <li><span class="marker">→</span><strong>OpenAPI Generation</strong> — RESTful API specifications generated from discovered endpoints and data contracts.</li>
-        <li><span class="marker">→</span><strong>Test Suite Generation</strong> — Automated test cases derived from captured user workflows. End-to-end, integration, and regression coverage.</li>
-        <li><span class="marker">→</span><strong>Container Packaging</strong> — Docker/OCI images, Helm charts, and AKS manifests. Ready for deployment on AKS Hybrid.</li>
-        <li><span class="marker">→</span><strong>Regression Validation</strong> — Sandboxed comparison of modernized output against original application behavior. Side-by-side functional verification.</li>
-      </ul>
-    </div>
-  </div>
-  <p style="margin-top: 3rem; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ms-green);">Output → Deployable containers + comprehensive gap report</p>
-</section>
+    <!-- Phase 4: Generation & Validation -->
+    <section class="bg-deep">
+        <div class="section-tag">// Phase 04</div>
+        <h2 class="section-title"><strong>Generation &amp; Validation</strong></h2>
+        <div class="content-two-col">
+            <div class="content-text">
+                <p>The final phase produces deployable artifacts. AI agents generate microservice scaffolding based on
+                    the discovered specifications. Test suites are derived from captured workflows. Everything is
+                    validated against the original application running in a sandboxed environment.</p>
+                <p>The output is not a black box — it's source code, container images, API specifications, and test
+                    suites that the organization owns and can maintain.</p>
+            </div>
+            <div>
+                <ul class="detail-list">
+                    <li><span class="marker">→</span><strong>Code Scaffolding</strong> — Semantic Kernel and AutoGen
+                        agents generate microservice code from discovered specifications and captured business rules.
+                    </li>
+                    <li><span class="marker">→</span><strong>OpenAPI Generation</strong> — RESTful API specifications
+                        generated from discovered endpoints and data contracts.</li>
+                    <li><span class="marker">→</span><strong>Test Suite Generation</strong> — Automated test cases
+                        derived from captured user workflows. End-to-end, integration, and regression coverage.</li>
+                    <li><span class="marker">→</span><strong>Container Packaging</strong> — Docker/OCI images, Helm
+                        charts, and AKS manifests. Ready for deployment on AKS Hybrid.</li>
+                    <li><span class="marker">→</span><strong>Regression Validation</strong> — Sandboxed comparison of
+                        modernized output against original application behavior. Side-by-side functional verification.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p
+            style="margin-top: 3rem; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ms-green);">
+            Output → Deployable containers + comprehensive gap report</p>
+    </section>
 
-<section class="tagline-section">
-  <p class="tagline">Your legacy. <em>Your code.</em> Your infrastructure.</p>
-  <div style="margin-top: 2rem; position: relative;"><a href="engagement.html" class="btn-primary">View Engagement Model</a></div>
-</section>
+    <section class="tagline-section">
+        <p class="tagline">Your legacy. <em>Your code.</em> Your infrastructure.</p>
+        <div style="margin-top: 2rem; position: relative;"><a href="engagement.html" class="btn-primary">View Engagement
+                Model</a></div>
+    </section>
 
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <a href="index.html" class="logo">SOVEREIGN <span>FORGE</span></a>
-      <p>A Microsoft GBB Demo Company. Fictional entity for Azure Local demonstration purposes.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Platform</h4>
-      <ul>
-        <li><a href="process.html">Process</a></li>
-        <li><a href="platform.html">Architecture</a></li>
-        <li><a href="use-cases.html">Use Cases</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Engage</h4>
-      <ul>
-        <li><a href="engagement.html">Engagement Model</a></li>
-        <li><a href="contact.html">Request Assessment</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>SOVEREIGN FORGE — A Microsoft GBB Demo Company</span>
-    <span>&copy; 2026 Sovereign Forge. All rights reserved.</span>
-  </div>
-</footer>
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">SOVEREIGN <span>FORGE</span></a>
+                <p>A Microsoft GBB Demo Company. Fictional entity for Azure Local demonstration purposes.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="platform.html">Architecture</a></li>
+                    <li><a href="use-cases.html">Use Cases</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Engage</h4>
+                <ul>
+                    <li><a href="engagement.html">Engagement Model</a></li>
+                    <li><a href="contact.html">Request Assessment</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>SOVEREIGN FORGE — A Microsoft GBB Demo Company</span>
+            <span>&copy; 2026 Sovereign Forge. All rights reserved.</span>
+        </div>
+    </footer>
 
 </body>
+
 </html>

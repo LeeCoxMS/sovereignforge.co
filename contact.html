@@ -1,172 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Sovereign Forge</title>
-<link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Sovereign Forge</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
-<nav>
-  <a href="index.html" class="logo">SOVEREIGN <span>FORGE</span></a>
-  <ul class="nav-links">
-    <li><a href="about.html">About</a></li>
-    <li><a href="process.html">Process</a></li>
-    <li><a href="platform.html">Platform</a></li>
-    <li><a href="use-cases.html">Use Cases</a></li>
-    <li><a href="engagement.html">Engagement</a></li>
-    <li><a href="contact.html" class="active">Contact</a></li>
-  </ul>
-</nav>
-
-<div class="page-header">
-  <div class="section-tag">// Get Started</div>
-  <h1>Request an <strong>assessment</strong>.</h1>
-  <p class="page-subtitle">Start with a 2-week assessment of your legacy application portfolio. No changes to production systems. No commitments beyond the evaluation.</p>
-</div>
-
-<section class="bg-navy">
-  <div class="content-two-col">
-    <div>
-      <form id="assessment-form" onsubmit="return handleSubmit(event)">
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" required placeholder="Jane Smith">
-        </div>
-        <div class="form-group">
-          <label for="org">Organization</label>
-          <input type="text" id="org" name="org" required placeholder="Contoso Defense Systems">
-        </div>
-        <div class="form-group">
-          <label for="email">Work Email</label>
-          <input type="email" id="email" name="email" required placeholder="jsmith@contoso.com">
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone (Optional)</label>
-          <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
-        </div>
-        <div class="form-group">
-          <label for="vertical">Industry Vertical</label>
-          <select id="vertical" name="vertical" required>
-            <option value="" disabled selected>Select your industry</option>
-            <option value="defense">Defense &amp; Intelligence</option>
-            <option value="healthcare">Healthcare</option>
-            <option value="manufacturing">Manufacturing</option>
-            <option value="financial">Financial Services</option>
-            <option value="other">Other Regulated Industry</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="app-count">Estimated Legacy Application Count</label>
-          <select id="app-count" name="app-count">
-            <option value="" disabled selected>How many legacy apps?</option>
-            <option value="1-5">1 — 5 applications</option>
-            <option value="6-20">6 — 20 applications</option>
-            <option value="21-50">21 — 50 applications</option>
-            <option value="50+">50+ applications</option>
-            <option value="unknown">Unknown / need help assessing</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="details">Tell Us About Your Situation</label>
-          <textarea id="details" name="details" placeholder="Describe the legacy applications you're dealing with. What are they? How old? What's the business impact of keeping them running as-is?"></textarea>
-        </div>
-        <div class="form-group">
-          <label for="engagement">Engagement Interest</label>
-          <select id="engagement" name="engagement">
-            <option value="" disabled selected>What are you looking for?</option>
-            <option value="assessment">Assessment (2 weeks)</option>
-            <option value="pilot">Pilot (6-8 weeks)</option>
-            <option value="program">Full Program</option>
-            <option value="conversation">Just want to talk</option>
-          </select>
-        </div>
-        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">Submit Request</button>
-      </form>
-      <div id="form-success" style="display:none; padding: 3rem; text-align: center;">
-        <div style="font-size: 3rem; margin-bottom: 1rem;">✓</div>
-        <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--ms-green); margin-bottom: 1rem;">Request Received</h3>
-        <p style="font-size: 1.1rem; color: var(--ms-light);">Thank you for your interest in Sovereign Forge. This is a demo form — in a production deployment, your request would be routed to the engagement team.</p>
-      </div>
-    </div>
-    <div>
-      <div style="margin-bottom: 3rem;">
-        <div class="section-tag" style="margin-bottom: 1.5rem;">// What Happens Next</div>
-        <ul class="detail-list">
-          <li><span class="marker">1</span>We review your submission and schedule a 30-minute discovery call</li>
-          <li><span class="marker">2</span>We scope the assessment: which applications, which stakeholders, what documentation exists</li>
-          <li><span class="marker">3</span>Assessment kicks off — 2 weeks, non-invasive, no changes to production</li>
-          <li><span class="marker">4</span>Executive briefing with findings, risk scores, and recommendations</li>
+    <nav>
+        <a href="index.html" class="logo">SOVEREIGN <span>FORGE</span></a>
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="use-cases.html">Use Cases</a></li>
+            <li><a href="engagement.html">Engagement</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
-      </div>
+    </nav>
 
-      <div style="margin-bottom: 3rem;">
-        <div class="section-tag" style="margin-bottom: 1.5rem;">// Assessment Includes</div>
-        <ul class="detail-list">
-          <li><span class="marker">→</span>Complete legacy application inventory with scoring</li>
-          <li><span class="marker">→</span>Complexity and risk assessment per application</li>
-          <li><span class="marker">→</span>Modernization target recommendations</li>
-          <li><span class="marker">→</span>Compliance gap analysis (CMMC, HIPAA, PCI-DSS, SOX)</li>
-          <li><span class="marker">→</span>Infrastructure requirements for Pilot phase</li>
-          <li><span class="marker">→</span>Executive briefing and detailed technical report</li>
-        </ul>
-      </div>
+    <div class="page-header">
+        <div class="section-tag">// Get Started</div>
+        <h1>Request an <strong>assessment</strong>.</h1>
+        <p class="page-subtitle">Start with a 2-week assessment of your legacy application portfolio. No changes to
+            production systems. No commitments beyond the evaluation.</p>
+    </div>
 
-      <div class="card" style="border: 1px solid var(--ms-border);">
-        <div class="section-tag" style="margin-bottom: 1rem;">// Demo Notice</div>
-        <p style="font-size: 0.95rem; color: var(--ms-gray); line-height: 1.6;">Sovereign Forge is a Microsoft GBB Demo Company. This contact form is a demonstration — submissions are not processed or stored. For Azure Local inquiries, contact your Microsoft account team.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <section class="bg-navy">
+        <div class="content-two-col">
+            <div>
+                <iframe
+                    src="https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR4Uze1sADM5BuB6p5uWPgstUQjRKOFM1OUFPMkpMUERLOEdITUNGSlZYVS4u&embed=true"
+                    style="width: 100%; min-height: 900px; border: none; background: transparent;" allowfullscreen
+                    title="Sovereign Forge Assessment Request Form">
+                </iframe>
+            </div>
+            <div>
+                <div style="margin-bottom: 3rem;">
+                    <div class="section-tag" style="margin-bottom: 1.5rem;">// What Happens Next</div>
+                    <ul class="detail-list">
+                        <li><span class="marker">1</span>We review your submission and schedule a 30-minute discovery
+                            call</li>
+                        <li><span class="marker">2</span>We scope the assessment: which applications, which
+                            stakeholders, what documentation exists</li>
+                        <li><span class="marker">3</span>Assessment kicks off — 2 weeks, non-invasive, no changes to
+                            production</li>
+                        <li><span class="marker">4</span>Executive briefing with findings, risk scores, and
+                            recommendations</li>
+                    </ul>
+                </div>
 
-<section class="tagline-section">
-  <p class="tagline">Your legacy. <em>Your code.</em> Your infrastructure.</p>
-</section>
+                <div style="margin-bottom: 3rem;">
+                    <div class="section-tag" style="margin-bottom: 1.5rem;">// Assessment Includes</div>
+                    <ul class="detail-list">
+                        <li><span class="marker">→</span>Complete legacy application inventory with scoring</li>
+                        <li><span class="marker">→</span>Complexity and risk assessment per application</li>
+                        <li><span class="marker">→</span>Modernization target recommendations</li>
+                        <li><span class="marker">→</span>Compliance gap analysis (CMMC, HIPAA, PCI-DSS, SOX)</li>
+                        <li><span class="marker">→</span>Infrastructure requirements for Pilot phase</li>
+                        <li><span class="marker">→</span>Executive briefing and detailed technical report</li>
+                    </ul>
+                </div>
 
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <a href="index.html" class="logo">SOVEREIGN <span>FORGE</span></a>
-      <p>A Microsoft GBB Demo Company. Fictional entity for Azure Local demonstration purposes.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Platform</h4>
-      <ul>
-        <li><a href="process.html">Process</a></li>
-        <li><a href="platform.html">Architecture</a></li>
-        <li><a href="use-cases.html">Use Cases</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Engage</h4>
-      <ul>
-        <li><a href="engagement.html">Engagement Model</a></li>
-        <li><a href="contact.html">Request Assessment</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>SOVEREIGN FORGE — A Microsoft GBB Demo Company</span>
-    <span>&copy; 2026 Sovereign Forge. All rights reserved.</span>
-  </div>
-</footer>
+                <div class="card" style="border: 1px solid var(--ms-border);">
+                    <div class="section-tag" style="margin-bottom: 1rem;">// Demo Notice</div>
+                    <p style="font-size: 0.95rem; color: var(--ms-gray); line-height: 1.6;">Sovereign Forge is a
+                        Microsoft GBB Demo Company. Form responses are collected via Microsoft Forms and stored in
+                        SharePoint. For Azure Local inquiries, contact your Microsoft account team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script>
-function handleSubmit(e) {
-  e.preventDefault();
-  document.getElementById('assessment-form').style.display = 'none';
-  document.getElementById('form-success').style.display = 'block';
-  return false;
-}
-</script>
+    <section class="tagline-section">
+        <p class="tagline">Your legacy. <em>Your code.</em> Your infrastructure.</p>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">SOVEREIGN <span>FORGE</span></a>
+                <p>A Microsoft GBB Demo Company. Fictional entity for Azure Local demonstration purposes.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="platform.html">Architecture</a></li>
+                    <li><a href="use-cases.html">Use Cases</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Engage</h4>
+                <ul>
+                    <li><a href="engagement.html">Engagement Model</a></li>
+                    <li><a href="contact.html">Request Assessment</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>SOVEREIGN FORGE — A Microsoft GBB Demo Company</span>
+            <span>&copy; 2026 Sovereign Forge. All rights reserved.</span>
+        </div>
+    </footer>
 
 </body>
+
 </html>
