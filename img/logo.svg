@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80" fill="none">
+  <!-- Sovereign Forge — Icon + Wordmark Logo -->
+  <!-- Hexagonal forge mark: outer hex (sovereignty) + inner anvil/spark (forge/transformation) -->
+  
+  <!-- Outer hexagon -->
+  <polygon points="40,4 70.8,21.8 70.8,57.2 40,75 9.2,57.2 9.2,21.8" 
+    fill="none" stroke="#0078D4" stroke-width="3" stroke-linejoin="round"/>
+  
+  <!-- Inner hexagon (rotated, smaller — represents transformation/reforging) -->
+  <polygon points="40,16 58.5,26.7 58.5,48.3 40,59 21.5,48.3 21.5,26.7" 
+    fill="#0078D4" opacity="0.15"/>
+  
+  <!-- Anvil/forge abstract mark — stylized upward arrow/spark inside hex -->
+  <path d="M32,48 L40,24 L48,48 M36,40 L44,40" 
+    stroke="#0078D4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Spark details -->
+  <circle cx="40" cy="20" r="2" fill="#0078D4"/>
+  <line x1="34" y1="22" x2="31" y2="18" stroke="#0078D4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="46" y1="22" x2="49" y2="18" stroke="#0078D4" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Wordmark: SOVEREIGN -->
+  <text x="90" y="38" font-family="Segoe UI, -apple-system, sans-serif" font-weight="700" font-size="28" letter-spacing="0.12em" fill="#EFF3F8">SOVEREIGN</text>
+  
+  <!-- Wordmark: FORGE -->
+  <text x="90" y="66" font-family="Segoe UI, -apple-system, sans-serif" font-weight="700" font-size="28" letter-spacing="0.12em" fill="#0078D4">FORGE</text>
+</svg>
