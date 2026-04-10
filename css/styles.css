@@ -1139,8 +1139,9 @@ nav {
 /* ---- Section Background Images ---- */
 .hero-bg {
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: scroll;
     position: relative;
 }
 
@@ -1154,8 +1155,9 @@ nav {
 
 .section-bg {
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: scroll;
     position: relative;
 }
 
@@ -1206,7 +1208,9 @@ nav {
 /* Page header with background image */
 .page-header-bg {
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
     position: relative;
 }
 
