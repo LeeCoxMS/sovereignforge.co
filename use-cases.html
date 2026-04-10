@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Use Cases — Sovereign Forge</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">SOVEREIGN <span>FORGE</span></a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="platform.html">Platform</a></li>
+    <li><a href="use-cases.html" class="active">Use Cases</a></li>
+    <li><a href="engagement.html">Engagement</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <div class="section-tag">// Use Cases</div>
+  <h1>Built for environments where <strong>sovereignty is not optional</strong>.</h1>
+  <p class="page-subtitle">Every vertical has the same problem — critical systems running on unsupported software with no path forward. The constraints are what differ.</p>
+</div>
+
+<!-- Defense & Intelligence -->
+<section class="bg-navy">
+  <div class="section-tag">// Defense &amp; Intelligence</div>
+  <h2 class="section-title">Air-gapped modernization for <strong>classified environments</strong>.</h2>
+  <div class="content-two-col">
+    <div class="content-text">
+      <p>Defense and intelligence organizations operate under the strictest data sovereignty requirements. Systems may be classified, ITAR-controlled, or operate in disconnected/air-gapped networks. Legacy COTS applications in these environments can't be modernized using cloud-based tools or external contractors with internet access.</p>
+      <p>Sovereign Forge runs entirely on Azure Local within the classification boundary. No data egress. No cloud processing. Every analysis artifact stays within the air gap.</p>
+    </div>
+    <div>
+      <ul class="detail-list">
+        <li><span class="marker">→</span><strong>CMMC Compliance</strong> — Modernized applications meet Cybersecurity Maturity Model Certification requirements from day one.</li>
+        <li><span class="marker">→</span><strong>NIST 800-171</strong> — Output artifacts align with Controlled Unclassified Information (CUI) handling requirements.</li>
+        <li><span class="marker">→</span><strong>ITAR Controls</strong> — Entire pipeline operates within export-controlled boundaries. No foreign national access to analysis data.</li>
+        <li><span class="marker">→</span><strong>Air-Gapped Operations</strong> — Full pipeline execution without network connectivity. Model weights, tools, and dependencies pre-staged.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-grid card-grid-3" style="margin-top: 3rem;">
+    <div class="card">
+      <h3>Scenario: Logistics Tracker</h3>
+      <p>A 2005-era Win32 supply chain tracking application built by a contractor that went bankrupt. Running on Windows Server 2008 R2 with a FoxPro backend. 200+ users across 12 installations. No source code. Sovereign Forge discovers the data model, captures user workflows, and generates a containerized web application with the same operational logic.</p>
+    </div>
+    <div class="card">
+      <h3>Scenario: Maintenance Scheduler</h3>
+      <p>Vehicle maintenance scheduling system with embedded business rules for fleet readiness calculations. Custom COM integrations to three other systems. The developer retired and the documentation is a binder from 2009. Phase 2 Knowledge Capture recovers the readiness algorithms from operator interviews.</p>
+    </div>
+    <div class="card">
+      <h3>Scenario: Secure Messaging Gateway</h3>
+      <p>Legacy message routing application handling inter-system communications via DCOM and named pipes. Undocumented protocol with proprietary encryption. Binary analysis in Phase 1 maps the message format and routing rules. Modernized as a containerized message broker with standard TLS.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Healthcare -->
+<section class="bg-deep">
+  <div class="section-tag">// Healthcare</div>
+  <h2 class="section-title">HIPAA-compliant modernization for <strong>clinical systems</strong>.</h2>
+  <div class="content-two-col">
+    <div class="content-text">
+      <p>Healthcare organizations carry decades of embedded clinical logic in legacy applications. Patient data handling, HL7/FHIR interfaces, lab integrations, and clinical decision support — all running on platforms that no longer receive security patches.</p>
+      <p>The compliance pressure is immediate: HIPAA requires systems to be actively maintained and secured. Every unpatched legacy application is an audit finding waiting to happen.</p>
+    </div>
+    <div>
+      <ul class="detail-list">
+        <li><span class="marker">→</span><strong>HIPAA Compliance</strong> — PHI handling rules enforced throughout the pipeline. All analysis occurs on-premises with no cloud data processing.</li>
+        <li><span class="marker">→</span><strong>HL7/FHIR Integration</strong> — Legacy interface protocols discovered and mapped to modern FHIR R4 APIs.</li>
+        <li><span class="marker">→</span><strong>Clinical Logic Preservation</strong> — Business rules affecting patient care identified, documented, and validated by clinical domain experts.</li>
+        <li><span class="marker">→</span><strong>Audit Trail</strong> — Complete chain of custody from original binary to modernized output. Every transformation documented.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-grid card-grid-3" style="margin-top: 3rem;">
+    <div class="card">
+      <h3>Scenario: Lab Results Interface</h3>
+      <p>A 2003-era HL7v2 interface engine connecting lab analyzers to the hospital EMR. Written in Delphi by a company acquired and dissolved. Running on Windows XP Embedded. Sovereign Forge maps the HL7 message transformations and generates a modern FHIR-compliant interface service.</p>
+    </div>
+    <div class="card">
+      <h3>Scenario: Clinical Decision Support</h3>
+      <p>Legacy application with embedded dosage calculation algorithms for a specialty pharmacy. Algorithms are based on FDA guidance that the original developer interpreted. Knowledge Capture interviews with pharmacists recover the clinical rationale and validation criteria.</p>
+    </div>
+    <div class="card">
+      <h3>Scenario: Patient Scheduling</h3>
+      <p>Multi-facility scheduling system with complex resource allocation rules: room types, equipment availability, provider specialties, insurance pre-auth requirements. The Access database backend holds 18 years of configuration rules that evolved through direct table edits.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Manufacturing -->
+<section class="bg-navy">
+  <div class="section-tag">// Manufacturing</div>
+  <h2 class="section-title">OT/IT convergence for <strong>industrial systems</strong>.</h2>
+  <div class="content-two-col">
+    <div class="content-text">
+      <p>Manufacturing environments sit at the intersection of operational technology (OT) and information technology (IT). Legacy SCADA systems, MES platforms, and quality control applications run production lines that can't tolerate downtime — even for modernization.</p>
+      <p>Sovereign Forge's sandboxed approach means the legacy system keeps running while the modernized replacement is built and validated alongside it.</p>
+    </div>
+    <div>
+      <ul class="detail-list">
+        <li><span class="marker">→</span><strong>OPC-UA Discovery</strong> — Legacy OPC DA/Classic interfaces mapped and modernized to OPC-UA for secure, standards-based industrial communication.</li>
+        <li><span class="marker">→</span><strong>Zero Downtime</strong> — Parallel operation: legacy system stays live while the modernized version is validated. Cutover when ready.</li>
+        <li><span class="marker">→</span><strong>PLC Integration</strong> — Protocol analysis discovers communication patterns with Modbus, Profinet, and EtherNet/IP devices.</li>
+        <li><span class="marker">→</span><strong>Quality Traceability</strong> — Embedded quality control logic preserved. Batch records, lot tracking, and compliance calculations maintained.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-grid card-grid-3" style="margin-top: 3rem;">
+    <div class="card">
+      <h3>Scenario: Recipe Management</h3>
+      <p>A proprietary batch control system managing recipe parameters for chemical processing. Built in 1998 on Visual C++ 6.0 with a custom SQL Server schema. 15,000+ recipes with embedded process control logic. The vendor was acquired twice and the support contract expired in 2015.</p>
+    </div>
+    <div class="card">
+      <h3>Scenario: Quality Inspection</h3>
+      <p>Automated inspection station software with computer vision for defect detection. Custom algorithms trained on product-specific defect libraries. Running on Windows 7 with a FireWire camera interface. Modernized to Azure AI Vision on Edge with USB3 cameras.</p>
+    </div>
+    <div class="card">
+      <h3>Scenario: Production Scheduler</h3>
+      <p>MES module handling work order sequencing based on machine availability, tooling constraints, and material lot assignments. Complex constraint-satisfaction logic implemented as stored procedures in a SQL Server 2005 database. 400+ procedures, zero documentation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Financial Services -->
+<section class="bg-deep">
+  <div class="section-tag">// Financial Services</div>
+  <h2 class="section-title">Regulatory compliance for <strong>unsupported systems</strong>.</h2>
+  <div class="content-two-col">
+    <div class="content-text">
+      <p>Financial institutions face intense regulatory scrutiny over unsupported software. SOX, GLBA, and OCC examination requirements demand that systems processing financial data are actively maintained, patched, and secured. Legacy COTS applications that no longer receive updates are immediate audit findings.</p>
+      <p>The cost of a failed examination or data breach far exceeds the cost of modernization — but the risk of disrupting production systems during modernization has kept many institutions frozen.</p>
+    </div>
+    <div>
+      <ul class="detail-list">
+        <li><span class="marker">→</span><strong>SOX Compliance</strong> — Financial reporting systems modernized with full audit trail and control documentation.</li>
+        <li><span class="marker">→</span><strong>GLBA Data Protection</strong> — Customer financial data handling rules preserved and documented throughout modernization.</li>
+        <li><span class="marker">→</span><strong>OCC Examination Readiness</strong> — Modernized systems include control frameworks that satisfy examiner requirements.</li>
+        <li><span class="marker">→</span><strong>PCI-DSS</strong> — Cardholder data environments modernized to current PCI requirements. Segmentation and encryption by design.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-grid card-grid-3" style="margin-top: 3rem;">
+    <div class="card">
+      <h3>Scenario: Loan Calculation Engine</h3>
+      <p>Legacy loan origination system with embedded interest calculation, amortization, and regulatory fee logic. Built in 2002 on VB6 with an Access backend. Processes $400M annually. The calculation rules are embedded in 50,000 lines of VB6 that no one on staff can modify.</p>
+    </div>
+    <div class="card">
+      <h3>Scenario: AML Transaction Monitor</h3>
+      <p>Anti-money laundering alert system with pattern-matching rules developed over 10 years of regulatory feedback. The original vendor pivoted to cloud-only and deprecated the on-premises version. Rules can't be exported. Sovereign Forge extracts the rule patterns from binary analysis.</p>
+    </div>
+    <div class="card">
+      <h3>Scenario: Report Generator</h3>
+      <p>Regulatory reporting system producing OCC call reports and FR Y-9C filings. Crystal Reports-based with embedded SQL queries against a legacy data warehouse. 200+ report templates with complex aggregation logic. Moving to modern BI while preserving exact regulatory output formats.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tagline-section">
+  <p class="tagline">Your legacy. <em>Your code.</em> Your infrastructure.</p>
+  <div style="margin-top: 2rem; position: relative;"><a href="contact.html" class="btn-primary">Request Assessment</a></div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">SOVEREIGN <span>FORGE</span></a>
+      <p>A Microsoft GBB Demo Company. Fictional entity for Azure Local demonstration purposes.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="process.html">Process</a></li>
+        <li><a href="platform.html">Architecture</a></li>
+        <li><a href="use-cases.html">Use Cases</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Engage</h4>
+      <ul>
+        <li><a href="engagement.html">Engagement Model</a></li>
+        <li><a href="contact.html">Request Assessment</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>SOVEREIGN FORGE — A Microsoft GBB Demo Company</span>
+    <span>&copy; 2026 Sovereign Forge. All rights reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -4,117 +4,169 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sovereign Forge — Legacy Modernization for Regulated Industries</title>
-<style>
-  :root {
-    --ms-blue: #0078D4;
-    --ms-dark-blue: #005A9E;
-    --ms-navy: #0F1B2D;
-    --ms-deep: #0A1220;
-    --ms-panel: #121D2E;
-    --ms-card: #162236;
-    --ms-border: #1E2E45;
-    --ms-orange: #F25022;
-    --ms-green: #7FBA00;
-    --ms-yellow: #FFB900;
-    --ms-gray: #737373;
-    --ms-light: #C8D1DC;
-    --ms-white: #EFF3F8;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: var(--ms-deep); color: var(--ms-white); font-family: 'Segoe UI', -apple-system, sans-serif; overflow-x: hidden; }
-
-  nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center; background: linear-gradient(to bottom, rgba(10,18,32,0.95), transparent); }
-  .logo { font-weight: 700; font-size: 1.3rem; letter-spacing: 0.12em; text-transform: uppercase; }
-  .logo span { color: var(--ms-blue); }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
-  .nav-links a { color: var(--ms-light); text-decoration: none; transition: color 0.3s; }
-  .nav-links a:hover { color: var(--ms-blue); }
-
-  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 8rem 3rem 4rem; position: relative; }
-  .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 60%; height: 100%; background: radial-gradient(ellipse at 70% 40%, rgba(0,120,212,0.06) 0%, transparent 60%); pointer-events: none; }
-  .hero-tag { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ms-blue); margin-bottom: 2rem; opacity:0; animation: fadeUp 0.8s 0.3s forwards; }
-  .hero h1 { font-weight: 300; font-size: clamp(3rem, 7vw, 6.5rem); line-height: 1.05; max-width: 900px; opacity:0; animation: fadeUp 0.8s 0.5s forwards; }
-  .hero h1 strong { font-weight: 700; color: var(--ms-blue); }
-  .hero-sub { font-size: 1.35rem; font-weight: 300; color: var(--ms-light); max-width: 600px; margin-top: 2rem; line-height: 1.6; opacity:0; animation: fadeUp 0.8s 0.7s forwards; }
-  .hero-cta { display: flex; gap: 1.5rem; margin-top: 3rem; opacity:0; animation: fadeUp 0.8s 0.9s forwards; }
-  .btn-primary { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 1rem 2.5rem; background: var(--ms-blue); color: #fff; border: none; cursor: pointer; transition: all 0.3s; }
-  .btn-primary:hover { background: var(--ms-dark-blue); box-shadow: 0 0 30px rgba(0,120,212,0.3); }
-  .btn-secondary { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 1rem 2.5rem; background: transparent; color: var(--ms-white); border: 1px solid var(--ms-border); cursor: pointer; transition: all 0.3s; }
-  .btn-secondary:hover { border-color: var(--ms-blue); color: var(--ms-blue); }
-
-  .stats-bar { display: flex; border-top: 1px solid var(--ms-border); border-bottom: 1px solid var(--ms-border); }
-  .stat { flex: 1; padding: 3rem; border-right: 1px solid var(--ms-border); text-align: center; }
-  .stat:last-child { border-right: none; }
-  .stat-value { font-size: 3rem; font-weight: 700; color: var(--ms-blue); line-height: 1; }
-  .stat-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ms-gray); margin-top: 0.75rem; }
-
-  section { padding: 6rem 3rem; }
-  .section-tag { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ms-blue); margin-bottom: 1rem; }
-  .section-title { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; line-height: 1.15; max-width: 700px; margin-bottom: 3rem; }
-  .section-title strong { font-weight: 700; }
-
-  .problem { background: var(--ms-navy); }
-  .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 2rem; }
-  .problem-card { background: var(--ms-card); padding: 2.5rem; position: relative; overflow: hidden; }
-  .problem-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--ms-orange); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
-  .problem-card:hover::before { transform: scaleX(1); }
-  .problem-card h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; }
-  .problem-card p { font-size: 1.05rem; font-weight: 300; color: var(--ms-light); line-height: 1.6; }
-
-  .phases { background: var(--ms-deep); }
-  .phase-row { display: grid; grid-template-columns: 120px 1fr; gap: 3rem; padding: 3rem 0; border-bottom: 1px solid var(--ms-border); }
-  .phase-row:last-child { border-bottom: none; }
-  .phase-num { font-size: 4rem; font-weight: 700; color: var(--ms-border); line-height: 1; }
-  .phase-content h3 { font-size: 1.5rem; font-weight: 600; color: var(--ms-blue); margin-bottom: 0.75rem; }
-  .phase-content p { font-size: 1.1rem; font-weight: 300; color: var(--ms-light); line-height: 1.7; max-width: 700px; }
-  .phase-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
-  .phase-tag { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.8rem; border: 1px solid var(--ms-border); color: var(--ms-gray); }
-
-  .targets { background: var(--ms-navy); }
-  .target-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
-  .target-card { background: var(--ms-card); padding: 2.5rem 2rem; }
-  .target-card:hover { background: var(--ms-border); }
-  .target-icon { font-size: 2rem; margin-bottom: 1.5rem; }
-  .target-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; }
-  .target-card p { font-size: 0.95rem; font-weight: 300; color: var(--ms-light); line-height: 1.6; }
-
-  .verticals { background: var(--ms-deep); }
-  .vert-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-  .vert-item { padding: 2.5rem 2rem; border: 1px solid var(--ms-border); margin: -0.5px; transition: all 0.4s; }
-  .vert-item:hover { border-color: var(--ms-blue); z-index: 1; }
-  .vert-item h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
-  .vert-item p { font-size: 0.9rem; font-weight: 300; color: var(--ms-gray); line-height: 1.5; }
-
-  .platform { background: var(--ms-navy); text-align: center; }
-  .platform-badge { display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.75rem 2rem; border: 1px solid var(--ms-border); margin-top: 2rem; font-size: 0.75rem; letter-spacing: 0.1em; color: var(--ms-light); }
-  .platform-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ms-green); animation: pulse 2s infinite; }
-  .arch-diagram { max-width: 900px; margin: 3rem auto 0; display: grid; gap: 2px; }
-  .arch-layer { background: var(--ms-card); padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-  .arch-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ms-blue); min-width: 140px; }
-  .arch-items { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: flex-end; }
-  .arch-item { font-size: 0.7rem; color: var(--ms-light); padding: 0.4rem 0.8rem; border: 1px solid var(--ms-border); }
-
-  .tagline-section { padding: 8rem 3rem; text-align: center; background: var(--ms-deep); position: relative; }
-  .tagline-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(0,120,212,0.04) 0%, transparent 60%); }
-  .tagline { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 300; letter-spacing: 0.05em; position: relative; }
-  .tagline em { font-style: italic; color: var(--ms-blue); }
-
-  footer { padding: 3rem; border-top: 1px solid var(--ms-border); display: flex; justify-content: space-between; align-items: center; font-size: 0.65rem; letter-spacing: 0.1em; color: var(--ms-gray); }
-
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-  @media (max-width: 768px) { nav{padding:1rem 1.5rem} .nav-links{display:none} section{padding:4rem 1.5rem} .hero{padding:6rem 1.5rem 3rem} .stats-bar{flex-direction:column} .stat{border-right:none;border-bottom:1px solid var(--ms-border);padding:2rem} .stat:last-child{border-bottom:none} .problem-grid,.target-grid,.vert-grid{grid-template-columns:1fr} .phase-row{grid-template-columns:1fr;gap:1rem} .hero-cta{flex-direction:column} }
-</style>
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<nav><div class="logo">SOVEREIGN <span>FORGE</span></div><ul class="nav-links"><li><a href="#problem">Problem</a></li><li><a href="#process">Process</a></li><li><a href="#targets">Targets</a></li><li><a href="#platform">Platform</a></li><li><a href="#verticals">Verticals</a></li></ul></nav>
-<section class="hero"><div class="hero-tag">Legacy Modernization for Sovereign Environments</div><h1>Your legacy.<br>Your <strong>code</strong>.<br>Your infrastructure.</h1><p class="hero-sub">Sovereign Forge transforms abandoned and unsupported COTS software into modern, containerized microservices — entirely on your infrastructure, entirely under your control.</p><div class="hero-cta"><button class="btn-primary">Request Assessment</button><button class="btn-secondary">View Architecture</button></div></section>
-<div class="stats-bar"><div class="stat"><div class="stat-value">70%</div><div class="stat-label">Automation Rate</div></div><div class="stat"><div class="stat-value">4→1</div><div class="stat-label">Months to Weeks</div></div><div class="stat"><div class="stat-value">100%</div><div class="stat-label">On-Premises Execution</div></div><div class="stat"><div class="stat-value">0</div><div class="stat-label">Data Leaves Your Network</div></div></div>
-<section class="problem" id="problem"><div class="section-tag">// The Problem</div><h2 class="section-title">Critical systems running on <strong>unsupported software</strong> with no source code, no vendor, and no path forward.</h2><div class="problem-grid"><div class="problem-card"><h3>Vendor Abandonment</h3><p>The company that built your mission-critical software no longer exists. No patches. No support. No upgrades. The binary is all you have.</p></div><div class="problem-card"><h3>Compliance Exposure</h3><p>Unsupported software fails audits. NIST 800-171, CMMC, HIPAA, PCI-DSS — every framework demands supported, patchable systems.</p></div><div class="problem-card"><h3>Operational Risk</h3><p>One hardware failure away from catastrophe. The only person who understood the system retired in 2019. The Windows Server 2008 VM can't be touched.</p></div></div></section>
-<section class="phases" id="process"><div class="section-tag">// The Process</div><h2 class="section-title">Four phases. <strong>Full automation.</strong> Human validation at every gate.</h2><div class="phase-row"><div class="phase-num">01</div><div class="phase-content"><h3>Discovery</h3><p>Automated installer extraction, binary analysis, dependency mapping, database schema recovery, network protocol capture, and deployment documentation generation.</p><div class="phase-tags"><span class="phase-tag">Ghidra Headless</span><span class="phase-tag">Registry Diff</span><span class="phase-tag">Schema Extract</span><span class="phase-tag">Protocol Capture</span></div></div></div><div class="phase-row"><div class="phase-num">02</div><div class="phase-content"><h3>Knowledge Capture</h3><p>Guided interview workflows with administrators and end users. Screen recording with AI-annotated workflow mapping. Business rule extraction.</p><div class="phase-tags"><span class="phase-tag">User Interviews</span><span class="phase-tag">Screen Capture</span><span class="phase-tag">Vision AI</span><span class="phase-tag">Workflow Mapping</span></div></div></div><div class="phase-row"><div class="phase-num">03</div><div class="phase-content"><h3>Analysis & Decision</h3><p>BI dashboard correlating complexity, user workflows, integration surface area, and risk. Modernization target selection with cost/effort/risk modeling.</p><div class="phase-tags"><span class="phase-tag">BI Dashboard</span><span class="phase-tag">Risk Model</span><span class="phase-tag">Target Selection</span><span class="phase-tag">Gap Analysis</span></div></div></div><div class="phase-row"><div class="phase-num">04</div><div class="phase-content"><h3>Generation & Validation</h3><p>AI-generated microservice scaffolding. Test suites derived from captured workflows. Regression validation against the original application in sandbox.</p><div class="phase-tags"><span class="phase-tag">Code Generation</span><span class="phase-tag">OpenAPI Spec</span><span class="phase-tag">Container Packaging</span><span class="phase-tag">Regression Testing</span></div></div></div></section>
-<section class="targets" id="targets"><div class="section-tag">// Modernization Targets</div><h2 class="section-title">You choose the <strong>destination</strong>. We build the bridge.</h2><div class="target-grid"><div class="target-card"><div class="target-icon">☁️</div><h3>SaaS Replacement</h3><p>Commodity functionality with low customization. Map workflows to existing cloud services.</p></div><div class="target-card"><div class="target-icon">🌐</div><h3>Internal Web App</h3><p>Org-specific logic on-prem. Modern browser UI backed by containerized microservices.</p></div><div class="target-card"><div class="target-icon">🖥️</div><h3>Fat Client 1:1</h3><p>Preserve existing user workflows exactly. New source code, same experience.</p></div><div class="target-card"><div class="target-icon">⚡</div><h3>Hybrid</h3><p>Web frontend, containerized backend, preserved components. Most engagements land here.</p></div></div></section>
-<section class="verticals" id="verticals"><div class="section-tag">// Target Verticals</div><h2 class="section-title">Built for environments where <strong>sovereignty is not optional</strong>.</h2><div class="vert-grid"><div class="vert-item"><h3>Defense & Intelligence</h3><p>Air-gapped, ITAR-controlled, CMMC-compliant. Zero egress by design.</p></div><div class="vert-item"><h3>Healthcare</h3><p>HIPAA-bound systems with decades of embedded clinical logic and HL7/FHIR.</p></div><div class="vert-item"><h3>Manufacturing</h3><p>OT/IT convergence. Legacy SCADA and MES systems that can't be replaced overnight.</p></div><div class="vert-item"><h3>Financial Services</h3><p>SOX, GLBA, OCC compliance. Regulatory examination pressure on unsupported systems.</p></div></div></section>
-<section class="platform" id="platform"><div class="section-tag">// Built on Azure Local</div><h2 class="section-title" style="margin-left:auto;margin-right:auto;">The entire pipeline runs <strong>on your iron</strong>.</h2><div class="platform-badge"><span class="dot"></span>Powered by Azure Local &bull; Azure Arc &bull; Azure AI</div><div class="arch-diagram"><div class="arch-layer"><span class="arch-label">Analysis</span><div class="arch-items"><span class="arch-item">Ghidra Server</span><span class="arch-item">Azure AI Vision</span><span class="arch-item">Semantic Kernel</span><span class="arch-item">AutoGen Agents</span></div></div><div class="arch-layer"><span class="arch-label">Execution</span><div class="arch-items"><span class="arch-item">Hyper-V Sandbox</span><span class="arch-item">Checkpoint/Replay</span><span class="arch-item">Network Capture</span><span class="arch-item">UI Automation</span></div></div><div class="arch-layer"><span class="arch-label">Output</span><div class="arch-items"><span class="arch-item">OpenAPI Specs</span><span class="arch-item">Container Images</span><span class="arch-item">Test Suites</span><span class="arch-item">Gap Reports</span></div></div><div class="arch-layer"><span class="arch-label">Infrastructure</span><div class="arch-items"><span class="arch-item">Azure Local</span><span class="arch-item">Azure Arc</span><span class="arch-item">AKS Hybrid</span><span class="arch-item">Azure AI on Edge</span></div></div></div></section>
-<section class="tagline-section"><p class="tagline">Your legacy. <em>Your code.</em> Your infrastructure.</p></section>
-<footer><span>SOVEREIGN FORGE — A Microsoft Demo Company</span><span style="font-style:italic;font-size:0.8rem">Fictional entity for Azure Local demonstration purposes</span><span>&copy; 2026</span></footer>
-</body></html>
+
+<nav>
+  <a href="index.html" class="logo">SOVEREIGN <span>FORGE</span></a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="platform.html">Platform</a></li>
+    <li><a href="use-cases.html">Use Cases</a></li>
+    <li><a href="engagement.html">Engagement</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-tag">Legacy Modernization for Sovereign Environments</div>
+  <h1>Your legacy.<br>Your <strong>code</strong>.<br>Your infrastructure.</h1>
+  <p class="hero-sub">Sovereign Forge transforms abandoned and unsupported COTS software into modern, containerized microservices — entirely on your infrastructure, entirely under your control.</p>
+  <div class="hero-cta">
+    <a href="contact.html" class="btn-primary">Request Assessment</a>
+    <a href="platform.html" class="btn-secondary">View Architecture</a>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stat"><div class="stat-value">70%</div><div class="stat-label">Automation Rate</div></div>
+  <div class="stat"><div class="stat-value">4→1</div><div class="stat-label">Months to Weeks</div></div>
+  <div class="stat"><div class="stat-value">100%</div><div class="stat-label">On-Premises Execution</div></div>
+  <div class="stat"><div class="stat-value">0</div><div class="stat-label">Data Leaves Your Network</div></div>
+</div>
+
+<section class="bg-navy" id="problem">
+  <div class="section-tag">// The Problem</div>
+  <h2 class="section-title">Critical systems running on <strong>unsupported software</strong> with no source code, no vendor, and no path forward.</h2>
+  <div class="card-grid card-grid-3">
+    <div class="card card-accent">
+      <h3>Vendor Abandonment</h3>
+      <p>The company that built your mission-critical software no longer exists. No patches. No support. No upgrades. The binary is all you have.</p>
+    </div>
+    <div class="card card-accent">
+      <h3>Compliance Exposure</h3>
+      <p>Unsupported software fails audits. NIST 800-171, CMMC, HIPAA, PCI-DSS — every framework demands supported, patchable systems.</p>
+    </div>
+    <div class="card card-accent">
+      <h3>Operational Risk</h3>
+      <p>One hardware failure away from catastrophe. The only person who understood the system retired in 2019. The Windows Server 2008 VM can't be touched.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-deep" id="process">
+  <div class="section-tag">// The Process</div>
+  <h2 class="section-title">Four phases. <strong>Full automation.</strong> Human validation at every gate.</h2>
+  <div class="phase-row">
+    <div class="phase-num">01</div>
+    <div class="phase-content">
+      <h3>Discovery</h3>
+      <p>Automated installer extraction, binary analysis, dependency mapping, database schema recovery, network protocol capture, and deployment documentation generation.</p>
+      <div class="phase-tags"><span class="phase-tag">Ghidra Headless</span><span class="phase-tag">Registry Diff</span><span class="phase-tag">Schema Extract</span><span class="phase-tag">Protocol Capture</span></div>
+    </div>
+  </div>
+  <div class="phase-row">
+    <div class="phase-num">02</div>
+    <div class="phase-content">
+      <h3>Knowledge Capture</h3>
+      <p>Guided interview workflows with administrators and end users. Screen recording with AI-annotated workflow mapping. Business rule extraction.</p>
+      <div class="phase-tags"><span class="phase-tag">User Interviews</span><span class="phase-tag">Screen Capture</span><span class="phase-tag">Vision AI</span><span class="phase-tag">Workflow Mapping</span></div>
+    </div>
+  </div>
+  <div class="phase-row">
+    <div class="phase-num">03</div>
+    <div class="phase-content">
+      <h3>Analysis &amp; Decision</h3>
+      <p>BI dashboard correlating complexity, user workflows, integration surface area, and risk. Modernization target selection with cost/effort/risk modeling.</p>
+      <div class="phase-tags"><span class="phase-tag">BI Dashboard</span><span class="phase-tag">Risk Model</span><span class="phase-tag">Target Selection</span><span class="phase-tag">Gap Analysis</span></div>
+    </div>
+  </div>
+  <div class="phase-row">
+    <div class="phase-num">04</div>
+    <div class="phase-content">
+      <h3>Generation &amp; Validation</h3>
+      <p>AI-generated microservice scaffolding. Test suites derived from captured workflows. Regression validation against the original application in sandbox.</p>
+      <div class="phase-tags"><span class="phase-tag">Code Generation</span><span class="phase-tag">OpenAPI Spec</span><span class="phase-tag">Container Packaging</span><span class="phase-tag">Regression Testing</span></div>
+    </div>
+  </div>
+  <div style="margin-top: 3rem;"><a href="process.html" class="btn-secondary">Explore the Full Process →</a></div>
+</section>
+
+<section class="bg-navy" id="targets">
+  <div class="section-tag">// Modernization Targets</div>
+  <h2 class="section-title">You choose the <strong>destination</strong>. We build the bridge.</h2>
+  <div class="card-grid card-grid-4">
+    <div class="card"><div class="card-icon">☁️</div><h3>SaaS Replacement</h3><p>Commodity functionality with low customization. Map workflows to existing cloud services.</p></div>
+    <div class="card"><div class="card-icon">🌐</div><h3>Internal Web App</h3><p>Org-specific logic on-prem. Modern browser UI backed by containerized microservices.</p></div>
+    <div class="card"><div class="card-icon">🖥️</div><h3>Fat Client 1:1</h3><p>Preserve existing user workflows exactly. New source code, same experience.</p></div>
+    <div class="card"><div class="card-icon">⚡</div><h3>Hybrid</h3><p>Web frontend, containerized backend, preserved components. Most engagements land here.</p></div>
+  </div>
+</section>
+
+<section class="bg-deep" id="verticals">
+  <div class="section-tag">// Target Verticals</div>
+  <h2 class="section-title">Built for environments where <strong>sovereignty is not optional</strong>.</h2>
+  <div class="vert-grid">
+    <div class="vert-item"><h3>Defense &amp; Intelligence</h3><p>Air-gapped, ITAR-controlled, CMMC-compliant. Zero egress by design.</p></div>
+    <div class="vert-item"><h3>Healthcare</h3><p>HIPAA-bound systems with decades of embedded clinical logic and HL7/FHIR.</p></div>
+    <div class="vert-item"><h3>Manufacturing</h3><p>OT/IT convergence. Legacy SCADA and MES systems that can't be replaced overnight.</p></div>
+    <div class="vert-item"><h3>Financial Services</h3><p>SOX, GLBA, OCC compliance. Regulatory examination pressure on unsupported systems.</p></div>
+  </div>
+  <div style="margin-top: 3rem; text-align: center;"><a href="use-cases.html" class="btn-secondary">View Use Cases →</a></div>
+</section>
+
+<section class="bg-navy" id="platform" style="text-align: center;">
+  <div class="section-tag">// Built on Azure Local</div>
+  <h2 class="section-title" style="margin-left:auto;margin-right:auto;">The entire pipeline runs <strong>on your iron</strong>.</h2>
+  <div class="platform-badge"><span class="dot"></span>Powered by Azure Local &bull; Azure Arc &bull; Azure AI</div>
+  <div class="arch-diagram">
+    <div class="arch-layer"><span class="arch-label">Analysis</span><div class="arch-items"><span class="arch-item">Ghidra Server</span><span class="arch-item">Azure AI Vision</span><span class="arch-item">Semantic Kernel</span><span class="arch-item">AutoGen Agents</span></div></div>
+    <div class="arch-layer"><span class="arch-label">Execution</span><div class="arch-items"><span class="arch-item">Hyper-V Sandbox</span><span class="arch-item">Checkpoint/Replay</span><span class="arch-item">Network Capture</span><span class="arch-item">UI Automation</span></div></div>
+    <div class="arch-layer"><span class="arch-label">Output</span><div class="arch-items"><span class="arch-item">OpenAPI Specs</span><span class="arch-item">Container Images</span><span class="arch-item">Test Suites</span><span class="arch-item">Gap Reports</span></div></div>
+    <div class="arch-layer"><span class="arch-label">Infrastructure</span><div class="arch-items"><span class="arch-item">Azure Local</span><span class="arch-item">Azure Arc</span><span class="arch-item">AKS Hybrid</span><span class="arch-item">Azure AI on Edge</span></div></div>
+  </div>
+  <div style="margin-top: 3rem;"><a href="platform.html" class="btn-secondary">Platform Deep Dive →</a></div>
+</section>
+
+<section class="tagline-section">
+  <p class="tagline">Your legacy. <em>Your code.</em> Your infrastructure.</p>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">SOVEREIGN <span>FORGE</span></a>
+      <p>A Microsoft GBB Demo Company. Fictional entity for Azure Local demonstration purposes.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="process.html">Process</a></li>
+        <li><a href="platform.html">Architecture</a></li>
+        <li><a href="use-cases.html">Use Cases</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Engage</h4>
+      <ul>
+        <li><a href="engagement.html">Engagement Model</a></li>
+        <li><a href="contact.html">Request Assessment</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>SOVEREIGN FORGE — A Microsoft GBB Demo Company</span>
+    <span>&copy; 2026 Sovereign Forge. All rights reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>

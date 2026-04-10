@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Platform — Sovereign Forge</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">SOVEREIGN <span>FORGE</span></a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="platform.html" class="active">Platform</a></li>
+    <li><a href="use-cases.html">Use Cases</a></li>
+    <li><a href="engagement.html">Engagement</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <div class="section-tag">// Platform Architecture</div>
+  <h1>The entire pipeline runs <strong>on your iron</strong>.</h1>
+  <p class="page-subtitle">Built on Azure Local with Azure Arc, AKS Hybrid, and Azure AI on Edge. Zero data egress. Full sovereignty.</p>
+</div>
+
+<section class="bg-navy" style="text-align: center;">
+  <div class="platform-badge"><span class="dot"></span>Powered by Azure Local &bull; Azure Arc &bull; Azure AI on Edge</div>
+  <div class="arch-diagram" style="margin-top: 3rem;">
+    <div class="arch-layer"><span class="arch-label">Analysis</span><div class="arch-items"><span class="arch-item">Ghidra Server</span><span class="arch-item">Azure AI Vision</span><span class="arch-item">Semantic Kernel</span><span class="arch-item">AutoGen Agents</span></div></div>
+    <div class="arch-layer"><span class="arch-label">Execution</span><div class="arch-items"><span class="arch-item">Hyper-V Sandbox</span><span class="arch-item">Checkpoint/Replay</span><span class="arch-item">Network Capture</span><span class="arch-item">UI Automation</span></div></div>
+    <div class="arch-layer"><span class="arch-label">Output</span><div class="arch-items"><span class="arch-item">OpenAPI Specs</span><span class="arch-item">Container Images</span><span class="arch-item">Test Suites</span><span class="arch-item">Gap Reports</span></div></div>
+    <div class="arch-layer"><span class="arch-label">Infrastructure</span><div class="arch-items"><span class="arch-item">Azure Local</span><span class="arch-item">Azure Arc</span><span class="arch-item">AKS Hybrid</span><span class="arch-item">Azure AI on Edge</span></div></div>
+  </div>
+</section>
+
+<!-- Analysis Layer -->
+<section class="bg-deep">
+  <div class="section-tag">// Analysis Layer</div>
+  <h2 class="section-title">Intelligence that runs <strong>at the edge</strong>.</h2>
+  <div class="card-grid card-grid-2">
+    <div class="card card-accent">
+      <h3>Ghidra Server</h3>
+      <p>NSA's open-source reverse engineering framework running in headless mode. Performs automated binary analysis including function decompilation, call graph generation, string reference extraction, and import table analysis. Scales across multiple binaries concurrently using containerized workers.</p>
+    </div>
+    <div class="card card-accent">
+      <h3>Azure AI Vision</h3>
+      <p>Screen recordings processed through Azure AI Vision on Edge for UI element detection, workflow annotation, and user interaction pattern recognition. Identifies buttons, forms, navigation patterns, and data entry workflows without requiring application source code.</p>
+    </div>
+    <div class="card card-accent">
+      <h3>Semantic Kernel</h3>
+      <p>Microsoft's AI orchestration framework coordinates the analysis pipeline. Manages prompt chains for code understanding, specification generation, and business rule extraction. Runs against local LLM endpoints — no cloud API calls required.</p>
+    </div>
+    <div class="card card-accent">
+      <h3>AutoGen Agents</h3>
+      <p>Multi-agent framework for collaborative code generation. Specialized agents handle different modernization tasks: API design, database migration, UI generation, test creation. Agents self-validate through peer review loops.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Execution Layer -->
+<section class="bg-navy">
+  <div class="section-tag">// Execution Layer</div>
+  <h2 class="section-title">Sandboxed execution with <strong>full observability</strong>.</h2>
+  <div class="card-grid card-grid-2">
+    <div class="card card-accent">
+      <h3>Hyper-V Sandbox VMs</h3>
+      <p>Legacy applications installed and executed in isolated Hyper-V virtual machines. Clean-room approach: snapshot before installation, diff after. Each stage of analysis starts from a known checkpoint. VMs are disposable — no contamination between analysis runs.</p>
+    </div>
+    <div class="card card-accent">
+      <h3>Checkpoint &amp; Replay</h3>
+      <p>Full VM state captured at every phase boundary. Analysis can be rolled back, replayed, and branched. Deterministic execution enables reproducible results. Any failure point can be re-entered without starting from scratch.</p>
+    </div>
+    <div class="card card-accent">
+      <h3>Network Capture</h3>
+      <p>All network traffic from sandbox VMs routed through a transparent proxy. HTTP/HTTPS, SQL, SMTP, and custom protocols captured and decoded. Identifies every external dependency the application requires — including undocumented ones.</p>
+    </div>
+    <div class="card card-accent">
+      <h3>UI Automation</h3>
+      <p>Programmatic interaction with legacy application UIs. Click-path automation exercises discovered workflows and validates behavior. Captures input/output pairs for regression test generation. Handles Win32, WinForms, WPF, and web-based interfaces.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Output Layer -->
+<section class="bg-deep">
+  <div class="section-tag">// Output Layer</div>
+  <h2 class="section-title">Artifacts you <strong>own and maintain</strong>.</h2>
+  <div class="card-grid card-grid-4">
+    <div class="card" style="text-align: center;">
+      <div class="card-icon">📋</div>
+      <h3>OpenAPI Specs</h3>
+      <p>RESTful API definitions generated from discovered behavior. Versioned, documented, ready for consumer integration.</p>
+    </div>
+    <div class="card" style="text-align: center;">
+      <div class="card-icon">📦</div>
+      <h3>Container Images</h3>
+      <p>Docker/OCI images with Helm charts and AKS manifests. Multi-stage builds, security-scanned, production-ready.</p>
+    </div>
+    <div class="card" style="text-align: center;">
+      <div class="card-icon">🧪</div>
+      <h3>Test Suites</h3>
+      <p>End-to-end, integration, and regression tests derived from captured workflows. Continuous validation built-in.</p>
+    </div>
+    <div class="card" style="text-align: center;">
+      <div class="card-icon">📊</div>
+      <h3>Gap Reports</h3>
+      <p>Comprehensive documentation of what was automated, what requires manual intervention, and what was excluded.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Infrastructure Layer -->
+<section class="bg-navy">
+  <div class="section-tag">// Infrastructure Layer</div>
+  <h2 class="section-title">Azure Local: the foundation for <strong>sovereign compute</strong>.</h2>
+  <div class="content-two-col">
+    <div class="content-text">
+      <h3>Why Azure Local?</h3>
+      <p>The modernization pipeline requires significant compute — GPU acceleration for AI workloads, large memory for binary analysis, and fast storage for VM checkpoint/replay. Azure Local provides enterprise-grade hyperconverged infrastructure managed through Azure Arc.</p>
+      <p>Organizations get cloud-native management and tooling (Azure Portal, ARM templates, Azure Policy) while keeping all data and processing physically on-premises. No data egress. No cloud dependency for core pipeline execution.</p>
+    </div>
+    <div>
+      <ul class="detail-list">
+        <li><span class="marker">→</span><strong>Azure Local</strong> — Hyperconverged infrastructure with Azure management plane. GPU passthrough for AI workloads (Nvidia A2/T4).</li>
+        <li><span class="marker">→</span><strong>Azure Arc</strong> — Unified control plane across on-premises and cloud resources. Policy, monitoring, and update management from Azure.</li>
+        <li><span class="marker">→</span><strong>AKS Hybrid</strong> — Kubernetes on Azure Local for container orchestration. Runs the modernized output alongside the analysis pipeline.</li>
+        <li><span class="marker">→</span><strong>Azure AI on Edge</strong> — Local AI model inference. Vision, speech (Whisper), and language models running on GPU nodes without cloud connectivity.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="tagline-section">
+  <p class="tagline">Your legacy. <em>Your code.</em> Your infrastructure.</p>
+  <div style="margin-top: 2rem; position: relative;"><a href="contact.html" class="btn-primary">Request Assessment</a></div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">SOVEREIGN <span>FORGE</span></a>
+      <p>A Microsoft GBB Demo Company. Fictional entity for Azure Local demonstration purposes.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="process.html">Process</a></li>
+        <li><a href="platform.html">Architecture</a></li>
+        <li><a href="use-cases.html">Use Cases</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Engage</h4>
+      <ul>
+        <li><a href="engagement.html">Engagement Model</a></li>
+        <li><a href="contact.html">Request Assessment</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>SOVEREIGN FORGE — A Microsoft GBB Demo Company</span>
+    <span>&copy; 2026 Sovereign Forge. All rights reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>
