@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture Diagram — Sovereign Forge</title>
+    <link rel="icon" type="image/svg+xml" href="img/icon.svg">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .diagram-container {
+            width: 100%;
+            overflow-x: auto;
+            padding: 2rem 0;
+        }
+
+        .diagram-container .mermaid {
+            display: flex;
+            justify-content: center;
+        }
+
+        .diagram-container .mermaid svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .diagram-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 3rem;
+            padding: 2rem;
+            border: 1px solid var(--ms-border);
+            background: var(--ms-card);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.85rem;
+            color: var(--ms-light);
+        }
+
+        .legend-line {
+            width: 30px;
+            height: 3px;
+        }
+
+        .legend-line-dashed {
+            width: 30px;
+            height: 0;
+            border-top: 3px dashed;
+        }
+
+        .diagram-controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .diagram-controls button {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.5rem 1.5rem;
+            background: var(--ms-card);
+            color: var(--ms-light);
+            border: 1px solid var(--ms-border);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .diagram-controls button:hover,
+        .diagram-controls button.active {
+            border-color: var(--ms-blue);
+            color: var(--ms-blue);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html" class="logo"><img src="img/icon.svg" alt="Sovereign Forge">SOVEREIGN
+            <span>FORGE</span></a>
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="use-cases.html">Use Cases</a></li>
+            <li><a href="engagement.html">Engagement</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-header page-header-bg" style="background-image: url('img/platform.jpg');">
+        <div class="section-tag">// Architecture Deep Dive</div>
+        <h1>Full pipeline <strong>architecture</strong>.</h1>
+        <p class="page-subtitle">Every component, every data flow, every infrastructure dependency — from legacy binary
+            to containerized microservice.</p>
+    </div>
+
+    <section class="bg-navy">
+        <div class="section-tag">// Interactive Architecture Diagram</div>
+        <h2 class="section-title">The Sovereign Forge <strong>pipeline</strong>.</h2>
+        <p style="font-size: 1.05rem; font-weight: 300; color: var(--ms-light); margin-bottom: 2rem; max-width: 700px;">
+            Scroll horizontally on smaller screens. Solid arrows show data flow between phases.
+            Dashed arrows show infrastructure dependencies.
+        </p>
+
+        <div class="diagram-container">
+            <pre class="mermaid">
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#162236', 'primaryTextColor': '#EFF3F8', 'primaryBorderColor': '#1E2E45', 'lineColor': '#0078D4', 'secondaryColor': '#0F1B2D', 'tertiaryColor': '#0A1220', 'edgeLabelBackground': '#0A1220', 'clusterBkg': '#0F1B2D', 'clusterBorder': '#1E2E45'}}}%%
+
+flowchart TB
+    subgraph INPUT["🔹 INPUT — Legacy COTS Application"]
+        direction LR
+        INSTALLER["📦 Installer Package\nMSI / NSIS / Inno Setup / InstallShield"]
+        BINARY["⚙️ Application Binaries\nPE / MZ / NE / DLLs"]
+        DATABASE["🗄️ Database\nSQL Server / Access / FoxPro"]
+        USERS["👥 Subject Matter Experts\nAdmins / End Users"]
+    end
+
+    subgraph PHASE1["🔵 PHASE 1 — Discovery"]
+        direction LR
+        GHIDRA["🔬 Ghidra Server\nHeadless binary analysis\nFunction decompilation\nCall graph generation"]
+        EXTRACT["📋 Installer Extractor\n7z / innounp / unshield\nFile inventory"]
+        SCHEMA["🗃️ Schema Recovery\nTable relationships\nStored procedures\nData type mapping"]
+        REGDIFF["📝 Registry & FS Diff\nBefore/after snapshots\nCOM registrations"]
+        NETCAP["🌐 Network Capture\ntcpdump / Wireshark\nProtocol analysis"]
+    end
+
+    subgraph PHASE2["🔵 PHASE 2 — Knowledge Capture"]
+        direction LR
+        INTERVIEW["🎤 Interview Engine\nGuided questionnaires\nRole-specific workflows"]
+        SCREEN["📹 Screen Recorder\nSession capture\nUI element annotation"]
+        WORKFLOW["🗺️ Workflow Mapper\nProcess flow diagrams\nRole-based patterns"]
+        RULES["📐 Business Rule Extractor\nLLM-driven extraction\nValidation logic"]
+        WHISPER["🎧 Transcription\nWhisper on GPU\nLocal inference"]
+    end
+
+    subgraph PHASE3["🟡 PHASE 3 — Analysis & Decision"]
+        direction LR
+        DASHBOARD["📊 BI Dashboard\nComplexity scoring\nRisk heat maps\nWorkflow coverage"]
+        RECOMMEND["🎯 Target Recommender\nCost/effort/risk modeling\n4 modernization paths"]
+        GAPANALYSIS["🔍 Gap Analyzer\nUndiscovered workflows\nMissing business rules"]
+        COMPLIANCE["🛡️ Compliance Mapper\nCMMC / HIPAA\nPCI-DSS / NIST"]
+    end
+
+    subgraph TARGETS["📌 MODERNIZATION TARGETS"]
+        direction LR
+        SAAS["☁️ SaaS\nReplacement"]
+        WEBAPP["🌐 Internal\nWeb App"]
+        FATCLIENT["🖥️ Fat Client\n1:1 Rebuild"]
+        HYBRID["⚡ Hybrid\nWeb + Containers"]
+    end
+
+    subgraph PHASE4["🟢 PHASE 4 — Generation & Validation"]
+        direction LR
+        CODEGEN["💻 Code Generator\nSemantic Kernel\nAutoGen Agents"]
+        OPENAPI["📋 OpenAPI Generator\nAPI surface definition\nData contracts"]
+        TESTS["🧪 Test Suite Builder\nIntegration tests\nRegression tests"]
+        CONTAINER["📦 Container Packager\nDocker / OCI\nHelm charts\nAKS manifests"]
+        VALIDATE["✅ Regression Validator\nSide-by-side comparison\nBehavioral verification"]
+    end
+
+    subgraph OUTPUT["🔹 OUTPUT — Modernized Application"]
+        direction LR
+        SPECS["📋 OpenAPI Specs"]
+        IMAGES["📦 Container Images"]
+        SUITES["🧪 Test Suites"]
+        GAPREPORT["📊 Gap Reports"]
+    end
+
+    subgraph INFRA["⬛ INFRASTRUCTURE — Azure Local"]
+        direction LR
+        AZLOCAL["🏗️ Azure Local\nHyperconverged\nOn-premises"]
+        HYPERV["💿 Hyper-V Sandbox\nIsolated VMs\nCheckpoint/Replay"]
+        ARC["🔗 Azure Arc\nControl plane\nPolicy enforcement"]
+        AKS["☸️ AKS Hybrid\nKubernetes\nContainer orchestration"]
+        AIEDGE["🧠 Azure AI on Edge\nGPU inference\nVision / LLM / Whisper"]
+        GPU["🎮 GPU Node\nNvidia A2 / T4\nLocal AI workloads"]
+    end
+
+    INPUT --> PHASE1
+    INSTALLER --> EXTRACT
+    BINARY --> GHIDRA
+    DATABASE --> SCHEMA
+    USERS --> PHASE2
+
+    PHASE1 -->|"System manifest\nBinary inventory\nSchema maps"| PHASE2
+    PHASE2 -->|"Workflow specs\nBusiness rules\nTranscripts"| PHASE3
+    PHASE3 --> TARGETS
+    TARGETS -->|"Target selection\nFunctional specs\nGap report"| PHASE4
+    PHASE4 --> OUTPUT
+
+    INFRA -.->|"Compute & AI"| PHASE1
+    INFRA -.->|"GPU inference"| PHASE2
+    INFRA -.->|"Processing"| PHASE3
+    INFRA -.->|"Build & Deploy"| PHASE4
+
+    HYPERV -.->|"Legacy app\nexecution"| PHASE1
+    AIEDGE -.->|"Vision / Whisper\nLLM inference"| PHASE2
+    AKS -.->|"Deploys"| OUTPUT
+
+    style INPUT fill:#162236,stroke:#0078D4,stroke-width:2px,color:#EFF3F8
+    style PHASE1 fill:#0F1B2D,stroke:#0078D4,stroke-width:2px,color:#EFF3F8
+    style PHASE2 fill:#0F1B2D,stroke:#00A4EF,stroke-width:2px,color:#EFF3F8
+    style PHASE3 fill:#0F1B2D,stroke:#FFB900,stroke-width:2px,color:#EFF3F8
+    style TARGETS fill:#162236,stroke:#C8D1DC,stroke-width:1px,color:#EFF3F8
+    style PHASE4 fill:#0F1B2D,stroke:#7FBA00,stroke-width:2px,color:#EFF3F8
+    style OUTPUT fill:#162236,stroke:#7FBA00,stroke-width:2px,color:#EFF3F8
+    style INFRA fill:#0A1220,stroke:#005A9E,stroke-width:2px,color:#EFF3F8
+            </pre>
+        </div>
+
+        <div class="diagram-legend">
+            <div class="legend-item">
+                <div class="legend-line" style="background: #0078D4;"></div>
+                <span>Phase 1 &amp; 2 — Discovery &amp; Knowledge Capture</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-line" style="background: #FFB900;"></div>
+                <span>Phase 3 — Analysis &amp; Decision</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-line" style="background: #7FBA00;"></div>
+                <span>Phase 4 — Generation &amp; Output</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-line" style="background: #005A9E;"></div>
+                <span>Infrastructure — Azure Local</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-line-dashed" style="border-color: #0078D4;"></div>
+                <span>Infrastructure dependency (dashed)</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-deep">
+        <div class="section-tag">// Data Flow Summary</div>
+        <h2 class="section-title">What flows between <strong>each phase</strong>.</h2>
+        <div class="phase-row">
+            <div class="phase-num">01→02</div>
+            <div class="phase-content">
+                <h3>Discovery → Knowledge Capture</h3>
+                <p>System manifest, binary inventory, database schema maps, dependency graph, installation artifact
+                    catalogue, network protocol captures.</p>
+            </div>
+        </div>
+        <div class="phase-row">
+            <div class="phase-num">02→03</div>
+            <div class="phase-content">
+                <h3>Knowledge Capture → Analysis</h3>
+                <p>Workflow specifications, business rule documentation, interview transcripts, screen recording
+                    annotations, role-based process maps.</p>
+            </div>
+        </div>
+        <div class="phase-row">
+            <div class="phase-num">03→04</div>
+            <div class="phase-content">
+                <h3>Analysis → Generation</h3>
+                <p>Modernization target selection, functional specifications, compliance gap report, risk assessment,
+                    cost/effort model.</p>
+            </div>
+        </div>
+        <div class="phase-row">
+            <div class="phase-num">04→🚀</div>
+            <div class="phase-content">
+                <h3>Generation → Deployment</h3>
+                <p>OpenAPI specifications, Docker/OCI container images, Helm charts, AKS deployment manifests, test
+                    suites, comprehensive gap report.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-navy">
+        <div class="section-tag">// Zero Egress Architecture</div>
+        <h2 class="section-title">Every byte stays <strong>on your network</strong>.</h2>
+        <div class="card-grid card-grid-3">
+            <div class="card card-accent">
+                <h3>Compute</h3>
+                <p>Azure Local hyperconverged infrastructure provides all processing power. Hyper-V sandbox VMs isolate
+                    legacy application execution with checkpoint/replay.</p>
+            </div>
+            <div class="card card-accent">
+                <h3>AI Inference</h3>
+                <p>Nvidia A2/T4 GPUs run all AI workloads locally — Azure AI Vision for screen annotation, Whisper for
+                    transcription, quantized LLMs for code generation.</p>
+            </div>
+            <div class="card card-accent">
+                <h3>Management</h3>
+                <p>Azure Arc provides the control plane for policy, monitoring, and updates. Management telemetry is the
+                    only outbound traffic — application data never leaves.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="tagline-section">
+        <p class="tagline">Your legacy. <em>Your code.</em> Your infrastructure.</p>
+        <div style="margin-top: 2rem; position: relative;"><a href="platform.html" class="btn-secondary">← Back to
+                Platform Overview</a></div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo"><img src="img/icon.svg" alt="Sovereign Forge">SOVEREIGN
+                    <span>FORGE</span></a>
+                <p>A Microsoft GBB Demo Company. Showcasing Azure capabilities for regulated industries.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="platform.html">Architecture</a></li>
+                    <li><a href="use-cases.html">Use Cases</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Engage</h4>
+                <ul>
+                    <li><a href="engagement.html">Engagement Model</a></li>
+                    <li><a href="contact.html">Request Assessment</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>SOVEREIGN FORGE — A Microsoft GBB Demo Company</span>
+            <span>&copy; 2026 Sovereign Forge. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            themeVariables: {
+                primaryColor: '#162236',
+                primaryTextColor: '#EFF3F8',
+                primaryBorderColor: '#1E2E45',
+                lineColor: '#0078D4',
+                secondaryColor: '#0F1B2D',
+                tertiaryColor: '#0A1220'
+            },
+            flowchart: {
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+
+</body>
+
+</html>
